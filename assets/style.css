@@ -1,0 +1,374 @@
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+:root {
+    --main-red: rgb(240, 0, 0);
+    --main-dark-gray: #282828;
+    --main-hazy-white: rgba(255, 255, 255, 0.5);
+    --main-hazy-white-heavy: rgba(255, 255, 255, 0.95);
+    --main-border-width: 1px;
+    --default-movement: -3.5px;
+    --default-movement-action: all 0.3s ease 0s;
+    --main-light-gray: rgb(185, 185, 185);
+    --default-margin: 10px;
+    --main-border-radius: 3px;
+}
+
+* {
+    transition: var(--default-movement-action);
+}
+
+body {
+    background: url(images/whitestudbackground.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Lato';
+}
+
+.wrapper {
+    width: 100%;
+}
+
+p {
+    color: var(--main-dark-gray);
+}
+
+h1 {
+    /* color: var(--main-red); */
+    color: var(--main-dark-gray);
+    font-size: 2em;
+    font-weight: 900;
+    margin: .5em 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--main-dark-gray);
+    font-weight: bold;
+}
+
+a:hover * {
+    transform: translateY(var(--default-movement));
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    margin: 10px;
+    display: inline;
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+button {
+    padding: 8px 25px;
+    background: var(--main-hazy-white);
+    border-color: var(--main-red);
+    border-width: var(--main-border-width);
+    border-style: solid;
+    border-radius: var(--main-border-radius);
+}
+
+button p, button h2 {
+    color: var(--main-red);
+    margin: 0px;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: var(--main-red);
+    transform: translateY(var(--default-movement));
+    cursor: pointer;
+}
+
+button:hover p, button:hover h2 {
+    color: white;
+}
+
+button:active {
+    transform: scale(1.1);
+}
+
+.footer {
+    margin: 20px 0;
+    background-color:var(--main-hazy-white);
+}
+
+.footer p {
+    white-space: pre;
+}
+
+#overlay {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 0;
+    transition: .5s ease;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--main-hazy-white-heavy);
+    z-index: 2;
+    cursor: pointer;
+    border-radius: 2x;
+    border-color: var(--main-red);
+}
+
+
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+.fa {
+    color: var(--main-red);
+}
+
+.fa:hover {
+    transform: translateY(var(--default-movement));
+}
+
+.searchbox {
+    width: 90%;
+    max-width: 550px;
+    
+}
+
+.search {
+    background: var(--main-hazy-white);
+    border-color: var(--main-red);
+    border-width: var(--main-border-width);
+    border-style: solid;
+    font-size: 1.5em;
+    height: 50px;
+}
+
+.search.text {
+    font-size: .9em;
+    width: 90%;
+    margin-right: 0px;
+    padding-left: 2%;
+    border-radius: var(--main-border-radius) 0px 0px var(--main-border-radius);
+}
+
+.search.submit {
+    width: 50px;
+    height: 100%;
+    background-color: var(--main-red);
+    margin-left: 0px;
+    border-radius: 0px var(--main-border-radius) var(--main-border-radius) 0px;
+}
+
+.search.submit:hover {
+    cursor: pointer;
+    transform: none;
+}
+
+.search.submit:hover .fa {
+    transform: translateY(var(--default-movement));
+}
+
+.search.submit .fa {
+    color: white;
+}
+
+.containerRight {
+    width: 100%;
+    height: 100px;
+}
+
+.subnote {
+    margin: 0;
+    color: var(--main-light-gray);
+    margin-top: 10px;
+}
+
+form {
+    margin: 0;
+}
+
+.channel {
+    border-top: 1px solid var(--main-light-gray);
+    align-items: center;
+    width: 600px;
+    padding-top: var(--default-margin);
+    margin-top: var(--default-margin);
+    position: relative;
+}
+
+.channel img {
+    width: 85%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.channelList .channelAlertMessage {
+    text-align: center;
+}
+
+.channel .php {
+    width: 15%;
+}
+
+.channel .name {
+    width: 39%;
+}
+
+.channel .subs {
+    width: 20%;
+}
+
+.channel .vidDate {
+    width: 26%;
+}
+
+.channel.header {
+    border: none;
+}
+
+.channel.header p {
+    color: var(--main-light-gray);
+    margin: 0;
+    font-size: .6em;
+}
+
+.channel p {
+    font-size: .75em;
+}
+
+.channel .select {
+    left: 101%;
+    position: absolute;
+}
+
+.homepageLogo:hover {
+    transform: scale(1.3) rotate(360deg);
+}
+
+.fas.fa-cog {
+    color: var(--main-red);
+    font-size: 2em;
+}
+
+#channels {
+    margin: 0 10px;
+}
+
+@media only screen and (min-width: 500px) {
+    .channel p, button h2 {
+        font-size: 1em;
+    }
+}
