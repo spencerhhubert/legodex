@@ -34,6 +34,3 @@ if ($resultCheck > 0) {
 } else {
     echo "I'm broken";
 }
-
-$insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink) VALUES ('$6', '$6', '$6', '$6', '$6', '2018-12-10 23:14:24', '$6');";
-mysqli_query($conn, $insertChannelDB);
