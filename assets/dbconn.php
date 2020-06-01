@@ -10,8 +10,6 @@ $dbUsername = getenv("dbUsername");
 $dbPassword = getenv("dbPassword");
 $dbName = getenv("dbName");
 
-echo(getenv("BANANA_PHONE"));
-
 $conn = mysqli_connect($dbServerName, $dbUsername, $dbPassword, $dbName);
 
 ?>
