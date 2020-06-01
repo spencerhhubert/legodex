@@ -35,11 +35,11 @@
           $num_rows = mysqli_num_rows($result);
 
           if ($num_rows) {
-            print_r('<div class="container"><h2>This channel has already been added</h2></div>');
+            print_r('<div class="container"><h2 style="margin-top: 10px;">This channel has already been added</h2></div>');
           } else {
             $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink');";
             mysqli_query($conn, $insertChannelDB);
-            print_r('<div class="container"><h2>Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2></div>');
+            print_r('<div class="container"><h2 style="margin-top: 10px;">Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2></div>');
           }
         }     
       }
