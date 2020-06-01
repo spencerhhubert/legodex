@@ -1,2 +1,2 @@
 #!/bin/sh
-wget 'https://legodex.rebellug.com/assets/dbupdatevideos.php'
+wget -q 'https://legodex.rebellug.com/assets/dbupdatevideos.php' -O /dev/null 
