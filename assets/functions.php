@@ -87,8 +87,10 @@ class Search {
       global $API_KEY;
       $inputSearch = stripSpacesURL($inputSearch);
       $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&id=" . $inputSearch . "&key=" . $API_KEY;
+      echo("<pre>");
       $this->channels = json_decode(file_get_contents($API_URL));
-
+      print_r($this->channels);
+      
       if ($this->channels->pageInfo->totalResults < 1) {
         global $API_KEY;
         $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;

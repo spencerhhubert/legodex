@@ -18,13 +18,7 @@ if ($resultCheck > 0) {
         $channelLink = $currentChannel->getChannelLink(0);
         $subs = $currentChannel->getSubCount(0);
 
-        $update = "UPDATE channels SET
-        pfp = '$pfp',
-        name = '$name',
-        channelLink = '$channelLink',
-        subs = '$subs',
-        WHERE id = '$id'
-        ";
+        $update = "UPDATE channels SET pfp = '$pfp', name = '$name', channelLink = '$channelLink', subs = '$subs' WHERE id = '$id'";
 
         mysqli_query($conn, $update);
         $test++;
