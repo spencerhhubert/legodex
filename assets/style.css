@@ -168,7 +168,7 @@ a:hover * {
 }
 
 button {
-    padding: 8px 25px;
+    padding: 10px 25px;
     background: var(--main-hazy-white);
     border-color: var(--main-red);
     border-width: var(--main-border-width);
@@ -180,6 +180,7 @@ button p, button h2 {
     color: var(--main-red);
     margin: 0px;
     font-weight: bold;
+    font-size: .9em;
 }
 
 button:hover {
@@ -367,8 +368,16 @@ form {
     margin: 0 10px;
 }
 
+.error_message p {
+    margin-bottom: 5px;
+}
+
 @media only screen and (min-width: 500px) {
-    .channel p, button h2 {
+    .channel p {
         font-size: 1em;
+    }
+
+    button h2, button p {
+        font-size: 1.2em;
     }
 }

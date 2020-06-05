@@ -39,7 +39,7 @@
           } else {
             $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink');";
             mysqli_query($conn, $insertChannelDB);
-            print_r('<div class="container"><h2 style="margin-top: 10px;">Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2></div>');
+            print_r('<div class="container"><div><h2 style="margin-top: 15px; text-align: center;">Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2><h2 style="margin-top: 5px; text-align: center;">Share with your friends to grow the index!</h2></div></div>');
           }
         }     
       }

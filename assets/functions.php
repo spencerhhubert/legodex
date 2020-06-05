@@ -47,7 +47,7 @@ if (!function_exists('time_elapsed_string')) {
 }
 
 $noChannelAlertMessage = "
-  <div>
+  <div class='error_message'>
   <div class='container'><p>Your channel couldn't be found</p></div>
   <div class='container'><p>Most modern YouTube channels don't have a valid username</p></div>
   <div class='container'><p>Your channel ID can also be found as a random string of characters at the end of your channel's URL</p></div>

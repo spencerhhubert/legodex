@@ -7,7 +7,7 @@
           <div class="container">
               <!-- <form  method="POST" id="searchChannels"> -->
               <div class="container" style="width: 100%;">
-                  <input id="search" class="search text" placeholder="Search Channel ID or Username" type="text" name="input">
+                  <input id="search" class="search text" placeholder="Insert Channel ID" type="text" name="input">
                   <button id="submit" class="search submit" type="submit"><div class="container" style="align-self: center;"><i class="fa fa-search" aria-hidden="false"></div></i></button>
               </div>
               <!-- </form> -->

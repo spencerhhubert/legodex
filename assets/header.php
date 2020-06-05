@@ -5,7 +5,7 @@
   <title>The LEGO YouTuber Index</title>
   <link rel='icon' href='assets/images/logo-low-res.png' type='image/x-icon'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="assets/style.css" rel="stylesheet" type="text/css">
+  <link href="assets/style.css?<?php echo date('l jS \of F Y h:i:s A'); ?>" rel="stylesheet" type="text/css">
   <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet'>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="assets/functions.js"></script>
