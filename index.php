@@ -6,7 +6,7 @@
 
 <body onload="XCloseEscapeKey()">
 <div class="container" style="margin-bottom: 5px; padding: 5px;">
-    <div class="item" style="align-self: center;"><img src="assets/images/logo-low-res.png" style="height: 90px;" class="homepageLogo"></div>
+    <div class="item" style="align-self: center;"><img src="assets/images/logo-mid-res.png" style="height: 90px;" class="homepageLogo"></div>
     <div class="item"><div><h1 style="text-align: left; font-size: .8em; font-weight: normal;"><i>The</i></h1><h1 style="text-align: left; margin-top: -3px; font-weight: bolder; margin-bottom: 0;">LEGO<br>YouTuber<br>Index</h1></div></div>
 </div>
 
