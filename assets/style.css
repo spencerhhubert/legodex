@@ -356,9 +356,9 @@ form {
     position: absolute;
 }
 
-.homepageLogo:hover {
+/* .homepageLogo:hover {
     transform: scale(1.3) rotate(360deg);
-}
+} */
 
 .fas.fa-cog {
     color: var(--main-red);
