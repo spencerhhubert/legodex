@@ -124,7 +124,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: 'Lato';
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .wrapper {
