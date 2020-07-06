@@ -38,6 +38,15 @@
 </div>
 
 <div class="container"><button id="loadMore"><p>Show More</p></button></div>
+
+<div class="container" style="margin-top: 15px; font-size: 1.5em;">
+    <?php
+        $result = mysqli_query($conn, "SELECT * FROM channels");
+        $resultCheck = mysqli_num_rows($result);
+
+        print_r("<h3>" . $resultCheck . " LEGO YouTubers have already joined!</h3>");
+    ?> 
+</div>
 <input type="hidden" id="all" value="<?php echo $allcount; ?>">
 
 <?php
