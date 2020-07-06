@@ -16,6 +16,6 @@
         <p style="margin-top: 0; white-space: normal; text-align: center;">LEGO® is a trademark of the LEGO Group of companies which does not sponsor, authorize, or endorse this site.</p>
     </section>
     <section class="container">
-        <p style="margin-top: 10px; white-space: normal; text-align: center;">By using The LEGO YouTuber Index, you are agreeing to the </p><a href="https://www.youtube.com/t/terms" target="_blank"><p>YouTube Terms of Service.</p></a>
+        <p style="margin-top: 10px; white-space: normal; text-align: center;">By using The LEGO YouTuber Index, you are agreeing to the </p><a href="https://www.youtube.com/t/terms" target="_blank"><p style="margin-top: 10px;">YouTube Terms of Service.</p></a>
     </section>
 </footer>
