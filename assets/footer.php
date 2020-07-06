@@ -26,7 +26,7 @@
             <div class="container">
                 <p>By using The LEGO YouTuber Index, you are agreeing to the </p>
                 <a href="https://www.youtube.com/t/terms" target="_blank"><p>YouTube Terms of Service</p></a>
-                <p>.</p>
+                <p>, as this uses YouTube API Services.</p>
             </div>
         </div>
     </section>
