@@ -35,7 +35,7 @@
         <div class="item">
             <div class="container">
                 <p>You can also review </p>
-                <a href="https://www.youtube.com/t/terms" target="_blank"><p>Google's Privacy Policy</p></a>
+                <a href="https://policies.google.com/privacy?hl=en-US" target="_blank"><p>Google's Privacy Policy</p></a>
                 <p>, which The LEGO YouTuber Index adheres to.</p>
             </div>
         </div>
