@@ -201,11 +201,18 @@ button:active {
 .footer {
     margin: 20px 0;
     background-color:var(--main-hazy-white);
+    text-align: center;
 }
 
-.footer p {
-    white-space: pre;
+.footer h3 {
+    margin: 25px 0;
+    font-weight: 900;
+    letter-spacing: -0.035em;
 }
+
+/* .footer p {
+    white-space: pre;
+} */
 
 #overlay {
     position: fixed;
