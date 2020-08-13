@@ -74,19 +74,12 @@ class Search {
   public $base_url = "https://www.googleapis.com/youtube/v3/";
   public $channels;
   public $videos;
-  public $mostRecentVideo;
 
   public function mostRecentVideo($channelId) {
     global $API_KEY;
     $playlistId = substr_replace($channelId, "U", 1, 1);
-    $API_URL = $this->base_url . "playlistItems?order=date&part=snippet&playlistId=".$playlistId."&maxResults=25&key=".$API_KEY;
+    $API_URL = $this->base_url . "playlistItems?order=date&part=snippet&playlistId=".$playlistId."&maxResults=1&key=".$API_KEY;
     $this->videos = json_decode(file_get_contents($API_URL));
-    $this->mostRecentVideo = 0;
-    for ($i = 0; $i < count($this->videos->items); $i++) {
-      if (fixDateFormat($this->videos->items[$i]->snippet->publishedAt) > fixDateFormat($this->videos->items[$this->mostRecentVideo]->snippet->publishedAt) ) {
-        $this->mostRecentVideo = $i;
-      }
-    }
     return $this->videos;
   }
 
@@ -116,7 +109,7 @@ class Search {
   }
 
   public function getVideoDate() {
-      $videoDate = $this->videos->items[$this->mostRecentVideo]->snippet->publishedAt;
+      $videoDate = $this->videos->items[0]->snippet->publishedAt;
       $videoDate = str_replace('T', ' ', $videoDate);
       $videoDate = str_replace('Z', '', $videoDate);
       return $videoDate;
@@ -138,7 +131,7 @@ class Search {
   }
 
   public function getVideoLink() {
-      $videoId = $this->videos->items[$this->mostRecentVideo]->snippet->resourceId->videoId;
+      $videoId = $this->videos->items[0]->snippet->resourceId->videoId;
       $videoLink = "https://youtube.com/watch?v=" . $videoId;
       return $videoLink;
   }
