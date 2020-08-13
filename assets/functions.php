@@ -83,7 +83,7 @@ class Search {
     $this->videos = json_decode(file_get_contents($API_URL));
     $this->mostRecentVideo = 0;
     for ($i = 0; $i < count($this->videos->items); $i++) {
-      if ($this->videos->items[$i]->snippet->publishedAt > $this->videos->items[$this->mostRecentVideo]->snippet->publishedAt ) {
+      if (fixDateFormat($this->videos->items[$i]->snippet->publishedAt) > fixDateFormat($this->videos->items[$this->mostRecentVideo]->snippet->publishedAt) ) {
         $this->mostRecentVideo = $i;
       }
     }
@@ -152,6 +152,12 @@ function makeChannelLink($id) {
 function zuluTime($timestamp) {
   $timestamp = $timestamp . "Z";
   return $timestamp;
+}
+
+function fixDateFormat($date) {
+  $date = str_replace('T', ' ', $date);
+  $date = str_replace('Z', '', $date);
+  return $date;
 }
 
 
