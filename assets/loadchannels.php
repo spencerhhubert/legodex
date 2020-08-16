@@ -10,7 +10,9 @@ if ($resultCheck > 0) {
         $subs = $row['subs'];
         $vidDate = $row['vidDate'];
         $vidLink = $row['vidLink'];
-        printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, false);
+        $isLive = $row['isLive'];
+        $liveLink = $row['liveLink'];
+        printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, false, $isLive, $liveLink);
     }
 } else {
     echo "There are no channels";

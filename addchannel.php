@@ -27,17 +27,18 @@
           $subs = $channels->getSubCount($i);
           $vidDate = $channels->getVideoDate();
           $vidLink = $channels->getVideoLink();
+          $isLive = $currentChannel->checkLive($id)[0];
+          $liveLink = $currentChannel->checkLive($id)[1];
 
-          printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, false);
+          printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, false, $isLive, $liveLink);
 
-          
           $result = mysqli_query($conn, "SELECT * FROM channels WHERE id='$id'");
           $num_rows = mysqli_num_rows($result);
 
           if ($num_rows) {
             print_r('<div class="container"><h2 style="margin-top: 10px;">This channel has already been added</h2></div>');
           } else {
-            $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink');";
+            $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink, isLive, liveLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink', $isLive, $liveLink);";
             mysqli_query($conn, $insertChannelDB);
             print_r('<div class="container"><div><h2 style="margin-top: 15px; text-align: center;">Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2><h2 style="margin-top: 5px; text-align: center;">Share with your friends to grow the index!</h2></div></div>');
           }

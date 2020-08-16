@@ -15,9 +15,14 @@ if ($resultCheck > 0) {
         $vidDate = $currentChannel->getVideoDate();
         $vidLink = $currentChannel->getVideoLink();
 
+        $isLive = $currentChannel->checkLive($id)[0];
+        $liveLink = $currentChannel->checkLive($id)[1];
+
         $update = "UPDATE channels SET
         vidDate = '$vidDate',
-        vidLink = '$vidLink'
+        vidLink = '$vidLink',
+        isLive = '$isLive',
+        liveLink = '$liveLink'
         WHERE id = '$id'
         ";
 

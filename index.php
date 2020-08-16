@@ -25,7 +25,7 @@
 
 <div id="channels">
     <?php
-        $result = mysqli_query($conn, "SELECT * FROM channels ORDER BY vidDate DESC LIMIT $channelLoadCount");
+        $result = mysqli_query($conn, "SELECT * FROM channels ORDER BY isLive DESC, vidDate DESC LIMIT $channelLoadCount");
         $resultCheck = mysqli_num_rows($result);
 
         $allcount_query = "SELECT count(*) as allcount FROM channels";

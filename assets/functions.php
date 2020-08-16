@@ -135,6 +135,22 @@ class Search {
       $videoLink = "https://youtube.com/watch?v=" . $videoId;
       return $videoLink;
   }
+
+  public function checkLive($id) {
+    global $API_KEY;
+    $isLive = "false";
+    $liveLink = "";
+
+    $API_URL = $this->base_url . "search?part=snippet&channelId=" . $id . "&type=video&eventType=live&key=" . $API_KEY;
+    $results = json_decode(file_get_contents($API_URL));
+    if ($results->pageInfo->totalResults > 0) {
+      $isLive = "true";
+      $liveLink = "https://www.youtube.com/watch?v=" . $results->items[0]->id->videoId;
+    }
+
+    $output = array($isLive, $liveLink);
+    return $output;
+  }
 }
 
 function makeChannelLink($id) {
@@ -154,14 +170,25 @@ function fixDateFormat($date) {
 }
 
 
-function printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, bool $addButton) {
+function printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, bool $addButton, $isLive, $liveLink) {
   print_r('
   <div class="container"><div class="container channel">
   <div class="php"><a href="' . $channelLink . '" target="_blank"><img src=' . $pfp . '></a></div>
   <a href="' . $channelLink . '" target="_blank" class="name"><p>' . $name . '</p></a>
-  <p class="subs">' . number_format_short($subs) . '</p>
-  <a class="vidDate" href="' . $vidLink . '" target="_blank"><p>' . time_elapsed_string(zuluTime($vidDate)) . '</p></a>
-  ');
+  <p class="subs">' . number_format_short($subs) . '</p>');
+
+  if ($isLive == "false") {
+    print_r('
+    <a class="vidDate" href="' . $vidLink . '" target="_blank"><p>' . time_elapsed_string(zuluTime($vidDate)) . '</p></a>
+    ');
+  }
+
+  if ($isLive == "true") {
+    print_r('
+    <a class="vidDate" href="' . $liveLink . '" target="_blank"><p>🔴 Live Now!</p></a>
+    ');
+  }
+
   if ($addButton == true) {
     print_r('<button class="select"><p>Add</p></button>');
   }
