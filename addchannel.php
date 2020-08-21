@@ -9,7 +9,22 @@
       $channels = new Search();
       $channels->searchChannels($_POST["input"]);
       // print_r("<div class='container'>");
-      if ($channels->channels->pageInfo->resultsPerPage < 1 || $channels->channels->pageInfo->totalResults < 1) {
+
+
+      $channelNotFound = false;
+      if (isset($channels->channels->pageInfo->resultsPerPage)) {
+        if ($channels->channels->pageInfo->resultsPerPage < 1) {
+          $channelNotFound = true;
+        }
+      }
+
+      if (isset($channels->channels->pageInfo->totalResults)) {
+        if ($channels->channels->pageInfo->totalResults < 1) {
+          $channelNotFound = true;
+        }
+      }
+
+      if ($channelNotFound == true) {
         print_r($noChannelAlertMessage);
       } else {
         print_r($channelListHeader);
