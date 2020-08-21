@@ -90,7 +90,7 @@ class Search {
 
       $this->channels = json_decode(file_get_contents($API_URL));
 
-      if (count($this->channels->items) < 1) {
+      if ($this->channels->pageInfo->resultsPerPage < 1) {
         global $API_KEY;
         $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;
         $this->channels = json_decode(file_get_contents($API_URL));

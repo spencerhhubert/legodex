@@ -35,10 +35,10 @@
           $result = mysqli_query($conn, "SELECT * FROM channels WHERE id='$id'");
           $num_rows = mysqli_num_rows($result);
 
-          if ($num_rows) {
+          if ($num_rows > 0) {
             print_r('<div class="container"><h2 style="margin-top: 10px;">This channel has already been added</h2></div>');
           } else {
-            $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink, isLive, liveLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink', $isLive, $liveLink);";
+            $insertChannelDB = "INSERT INTO channels (id, pfp, name, channelLink, subs, vidDate, vidLink, isLive, liveLink) VALUES ('$id', '$pfp', '$name', '$channelLink', '$subs', '$vidDate', '$vidLink', '$isLive', '$liveLink');";
             mysqli_query($conn, $insertChannelDB);
             print_r('<div class="container"><div><h2 style="margin-top: 15px; text-align: center;">Congratulations! Your channel has been added to the LEGO YouTuber Index!</h2><h2 style="margin-top: 5px; text-align: center;">Share with your friends to grow the index!</h2></div></div>');
           }
