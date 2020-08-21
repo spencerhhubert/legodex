@@ -9,7 +9,7 @@
       $channels = new Search();
       $channels->searchChannels($_POST["input"]);
       // print_r("<div class='container'>");
-      if ($channels->channels->pageInfo->totalResults < 1) {
+      if (count($channels->channels->items) < 1) {
         print_r($noChannelAlertMessage);
       } else {
         print_r($channelListHeader);
@@ -27,8 +27,8 @@
           $subs = $channels->getSubCount($i);
           $vidDate = $channels->getVideoDate();
           $vidLink = $channels->getVideoLink();
-          $isLive = $currentChannel->checkLive($id)[0];
-          $liveLink = $currentChannel->checkLive($id)[1];
+          $isLive = $channels->checkLive($id)[0];
+          $liveLink = $channels->checkLive($id)[1];
 
           printChannelModule($pfp, $name, $channelLink, $subs, $vidDate, $vidLink, false, $isLive, $liveLink);
 

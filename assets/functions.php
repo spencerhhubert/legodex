@@ -90,7 +90,7 @@ class Search {
 
       $this->channels = json_decode(file_get_contents($API_URL));
 
-      if ($this->channels->pageInfo->totalResults < 1) {
+      if (count($this->channels->items) < 1) {
         global $API_KEY;
         $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;
         $this->channels = json_decode(file_get_contents($API_URL));
@@ -140,11 +140,12 @@ class Search {
     global $API_KEY;
     $isLive = "false";
     $liveLink = "";
-    $$results->pageInfo->totalResults = 0;
+    $resultCheck = 0;
 
     $API_URL = $this->base_url . "search?part=snippet&channelId=" . $id . "&type=video&eventType=live&key=" . $API_KEY;
     // $results = json_decode(file_get_contents($API_URL));
-    if ($results->pageInfo->totalResults > 0) {
+    // $resultCheck = $results->pageInfo->totalResults;
+    if ($resultCheck > 0) {
       $isLive = "true";
       $liveLink = "https://www.youtube.com/watch?v=" . $results->items[0]->id->videoId;
     }
