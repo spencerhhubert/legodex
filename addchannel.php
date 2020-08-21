@@ -9,7 +9,7 @@
       $channels = new Search();
       $channels->searchChannels($_POST["input"]);
       // print_r("<div class='container'>");
-      if (count($channels->channels->items) < 1) {
+      if ($channels->channels->pageInfo->resultsPerPage < 1) {
         print_r($noChannelAlertMessage);
       } else {
         print_r($channelListHeader);
