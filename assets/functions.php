@@ -14,6 +14,32 @@ if (!function_exists('stripSpacesURL')) {
   }
 }
 
+if (!function_exists('stripChannelURL')) {
+  function stripChannelURL($str) {
+    if(str_starts_with($str, 'https://')) {
+      $str = substr($str, 7);
+    }
+
+    if(str_starts_with($str, 'youtube.com/')) {
+      $str = substr($str, 11);
+    }
+
+    $str = $str . '/null';
+
+    switch($str) {
+      case str_starts_with($str, 'c/'):
+      case str_starts_with($str, 'channel/'):
+      case str_starts_with($str, 'user/'):
+        $start = strpos($str, '/');
+        $end = strpos($str, '/', $start + 1);
+        return substr($str, $start, $end);
+      default:
+        $end = strpos($str, '/');
+        return substr($str, 0, $end);
+    }
+  }
+}
+
 if (!function_exists('time_elapsed_string')) {
   // Glavić on stack overflow
   function time_elapsed_string($datetime, $full = false) {
@@ -84,18 +110,20 @@ class Search {
   }
 
   public function searchChannels($inputSearch) {
+    $inputSearch = stripSpacesURL($inputSearch);
+    $inputSearch = stripChannelURL($inputSearch);
+
+    global $API_KEY;
+    $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&id=" . $inputSearch . "&key=" . $API_KEY;
+
+    $this->channels = json_decode(file_get_contents($API_URL));
+
+    if ($this->channels->pageInfo->resultsPerPage < 1) {
       global $API_KEY;
-      $inputSearch = stripSpacesURL($inputSearch);
-      $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&id=" . $inputSearch . "&key=" . $API_KEY;
-
+      $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;
       $this->channels = json_decode(file_get_contents($API_URL));
-
-      if ($this->channels->pageInfo->resultsPerPage < 1) {
-        global $API_KEY;
-        $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;
-        $this->channels = json_decode(file_get_contents($API_URL));
-      }
-      return $this->channels;
+    }
+    return $this->channels;
   }
 
   public function getChannelName($resultNumber) {
