@@ -82,8 +82,8 @@ $noChannelAlertMessage = "
   <div class='container'><p>Your channel couldn't be found</p></div>
   <div class='container'><p>Here are some examples of valid channel URLs:</p></div>
   <div class='container'><p><i>youtube.com/channel/UCjnwN6JTE7jQcSYX27eeT_g</i></p></div>
-  <div class='container'><p><i>https://www.youtube.com/c/legospencer11</i></p></div>
-  <div class='container'><p><i>youtube.com/rebellug</i></p></div>
+  <div class='container'><p><i>https://www.youtube.com/user/legospencer11</i></p></div>
+  <div class='container'><p><i>https://www.youtube.com/Legobuff68</i></p></div>
   <div class='container'><a href='https://support.google.com/youtube/answer/6180214?hl=en' target='_blank'><p>Here are further directions for obtaining a link to your channel</p></a></div>
   </div>
   ";
