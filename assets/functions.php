@@ -16,24 +16,24 @@ if (!function_exists('stripSpacesURL')) {
 
 if (!function_exists('stripChannelURL')) {
   function stripChannelURL($str) {
-    if(str_starts_with($str, 'https://')) {
+    if(substr($str, 0, 8) === "https://") {
       $str = substr($str, 8);
     }
 
-    if(str_starts_with($str, 'www.')) {
+    if(substr($str, 0, 4) === "www.") {
       $str = substr($str, 4);
     }
 
-    if(str_starts_with($str, 'youtube.com/')) {
+    if(substr($str, 0, 12) === "youtube.com/") {
       $str = substr($str, 12);
     }
 
     $str = $str . '/null';
 
     switch($str) {
-      case str_starts_with($str, 'c/'):
-      case str_starts_with($str, 'channel/'):
-      case str_starts_with($str, 'user/'):
+      case substr($str, 0, 2) === 'c':
+      case substr($str, 0, 8) === 'channel/':
+      case substr($str, 0, 5) === 'user/':
 
         $start = strpos($str, '/') + 1;
         $end = strpos($str, '/', $start);
