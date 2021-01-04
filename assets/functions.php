@@ -17,11 +17,15 @@ if (!function_exists('stripSpacesURL')) {
 if (!function_exists('stripChannelURL')) {
   function stripChannelURL($str) {
     if(str_starts_with($str, 'https://')) {
-      $str = substr($str, 7);
+      $str = substr($str, 8);
+    }
+
+    if(str_starts_with($str, 'www.')) {
+      $str = substr($str, 4);
     }
 
     if(str_starts_with($str, 'youtube.com/')) {
-      $str = substr($str, 11);
+      $str = substr($str, 12);
     }
 
     $str = $str . '/null';
@@ -30,9 +34,10 @@ if (!function_exists('stripChannelURL')) {
       case str_starts_with($str, 'c/'):
       case str_starts_with($str, 'channel/'):
       case str_starts_with($str, 'user/'):
-        $start = strpos($str, '/');
-        $end = strpos($str, '/', $start + 1);
-        return substr($str, $start, $end);
+
+        $start = strpos($str, '/') + 1;
+        $end = strpos($str, '/', $start);
+        return substr($str, $start, $end - $start);
       default:
         $end = strpos($str, '/');
         return substr($str, 0, $end);
@@ -118,7 +123,7 @@ class Search {
 
     $this->channels = json_decode(file_get_contents($API_URL));
 
-    if ($this->channels->pageInfo->resultsPerPage < 1) {
+    if ($this->channels->pageInfo->totalResults < 1) {
       global $API_KEY;
       $API_URL = $this->base_url . "channels?part=snippet%2CcontentDetails%2Cstatistics&forUsername=" . $inputSearch . "&key=" . $API_KEY;
       $this->channels = json_decode(file_get_contents($API_URL));

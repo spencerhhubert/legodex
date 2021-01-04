@@ -7,13 +7,13 @@
           <div class="container">
               <!-- <form  method="POST" id="searchChannels"> -->
               <div class="container" style="width: 100%;">
-                  <input id="search" class="search text" placeholder="Insert Channel ID" type="text" name="input">
+                  <input id="search" class="search text" placeholder="Channel Link" type="text" name="input">
                   <button id="submit" class="search submit" type="submit"><div class="container" style="align-self: center;"><i class="fa fa-search" aria-hidden="false"></div></i></button>
               </div>
               <!-- </form> -->
           </div>
           <div class="container right" style="margin-bottom: 15px;">
-              <a href="https://support.google.com/youtube/answer/6180214?hl=en" target="_blank"><p class="subnote">Your channel ID is contained in your channel link, details here.</p></a>
+              <a href="https://support.google.com/youtube/answer/6180214?hl=en" target="_blank"><p class="subnote">How do I get a link to my channel?</p></a>
           </div>
         </div>
     </div>
