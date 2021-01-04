@@ -13,7 +13,7 @@
               <!-- </form> -->
           </div>
           <div class="container right" style="margin-bottom: 15px;">
-              <a href="https://support.google.com/youtube/answer/3250431?hl=en" target="_blank"><p class="subnote">What is my channel ID?</p></a>
+              <a href="https://support.google.com/youtube/answer/6180214?hl=en" target="_blank"><p class="subnote">Your channel ID is contained in your channel link, details here.</p></a>
           </div>
         </div>
     </div>
