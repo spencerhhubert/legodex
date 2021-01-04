@@ -80,10 +80,11 @@ if (!function_exists('time_elapsed_string')) {
 $noChannelAlertMessage = "
   <div class='error_message'>
   <div class='container'><p>Your channel couldn't be found</p></div>
-  <div class='container'><p>Most modern YouTube channels don't have a valid username</p></div>
-  <div class='container'><p>Your channel ID can also be found as a random string of characters at the end of your channel's URL</p></div>
-  <div class='container'><p>Example: https://youtube.com/channel/<b><i>UCRwAFgDj1WbAik2c-AdSSig</i><b></p></div>
-  <div class='container'><a href='https://support.google.com/youtube/answer/3250431?hl=en' target='_blank'><p>Here are further directions for find your channel ID in the YouTube Settings</p></a></div>
+  <div class='container'><p>Here are some examples of valid channel URLs:</p></div>
+  <div class='container'><p><i>youtube.com/channel/UCjnwN6JTE7jQcSYX27eeT_g</i></p></div>
+  <div class='container'><p><i>https://www.youtube.com/c/legospencer11</i></p></div>
+  <div class='container'><p><i>youtube.com/rebellug</i></p></div>
+  <div class='container'><a href='https://support.google.com/youtube/answer/6180214?hl=en' target='_blank'><p>Here are further directions for obtaining a link to your channel</p></a></div>
   </div>
   ";
 
