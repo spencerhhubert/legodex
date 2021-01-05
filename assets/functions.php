@@ -5,7 +5,7 @@ require_once realpath(dirname(__DIR__, 1) . "/vendor/autoload.php");
     $dotenv = Dotenv::createImmutable(dirname(__DIR__, 1));
     $dotenv->load();
 
-$channelLoadCount = 25;
+$channelLoadCount = 100;
 
 if (!function_exists('stripSpacesURL')) {
   function stripSpacesURL($str) {

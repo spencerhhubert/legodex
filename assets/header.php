@@ -43,7 +43,7 @@
   //load more channels
     $(document).ready(function() {
       var allcount = Number($('#all').val());
-      let growthRate = 25;
+      let growthRate = 100;
       let channelCount = growthRate;
       removeButton(allcount, channelCount);
 
