@@ -84,6 +84,7 @@ $noChannelAlertMessage = "
   <div class='container'><p><i>youtube.com/channel/UCjnwN6JTE7jQcSYX27eeT_g</i></p></div>
   <div class='container'><p><i>https://www.youtube.com/user/legospencer11</i></p></div>
   <div class='container'><p><i>youtube.com/Legobuff68</i></p></div>
+  <div class='container'><p><i>youtube.com/c/mandrproductions34</i></p></div>
   <div class='container'><a href='https://support.google.com/youtube/answer/6180214?hl=en' target='_blank'><p>Here are further directions for obtaining a link to your channel</p></a></div>
   </div>
   ";
