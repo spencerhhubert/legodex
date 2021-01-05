@@ -28,6 +28,10 @@ if (!function_exists('stripChannelURL')) {
       $str = substr($str, 12);
     }
 
+    if(substr($str, 0, 14) === "m.youtube.com/") {
+      $str = substr($str, 14);
+    }
+
     $str = $str . '/null';
 
     switch($str) {
