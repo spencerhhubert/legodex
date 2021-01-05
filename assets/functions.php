@@ -31,7 +31,7 @@ if (!function_exists('stripChannelURL')) {
     $str = $str . '/null';
 
     switch($str) {
-      case substr($str, 0, 2) === 'c':
+      case substr($str, 0, 2) === 'c/':
       case substr($str, 0, 8) === 'channel/':
       case substr($str, 0, 5) === 'user/':
 
